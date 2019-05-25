@@ -7,47 +7,23 @@
     <title>Eliminate!</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:600i&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="http://api.eventful.com/js/api">
+    </script>
 </head>
+
 <body>
     <header>
         <h1>Eliminate!</h1>
-        <h2>Changing the way you eat is hard.</h2>
-        <h2>Find recipes and support here!</h2>
+        <div class="title-bar">
+            <!-- <h2>Changing the way you eat is hard.</h2> -->
+            <h2 class="tag-line">Find recipes and support!</h2>
+        </div>
     </header>
 
     <form action="" id="search-form">
         <label for="recipe-search">What would you like to cook?</label>
         <input type="text" name="recipe-search" id="js-recipe-search" required aria-required="true" aria-placeholder="enter a recipe or ingredient" placeholder="enter a recipe or ingredient">
-
-        <!-- <fieldset>
-            <legend>Dietary Restrictions?</legend>
-            <input type="checkbox" id="low-carb" name="diet" value="low-carb" class="diet">
-            <label for="low-carb">Low-carb</label>
-            
-            <input type="checkbox" id="vegetarian" name="health" value="vegetarian" class="health">
-            <label for="vegetarian">Vegetarian</label>
-
-            <input type="checkbox" id="high-protein" name="diet" value="high-protein" class="diet">
-            <label for="high-protein">High-protein</label><br>
-
-            <input type="checkbox" id="low-fat" name="diet" value="low-fat" class="diet">
-            <label for="low-fat">Low-fat</label>
-
-            <input type="checkbox" id="vegan" name="health" value="vegan" class="health">
-            <label for="vegan">Vegan</label>
-
-            <input type="checkbox" id="sugar-conscious" name="health" value="sugar-conscious" class="health">
-            <label for="sugar-conscious">Sugar-conscious</label><br>
-
-            <input type="checkbox" id="peanut-free" name="health" value="peanut-free" class="health">
-            <label for="peanut-free">Peanut-free</label>
-
-            <input type="checkbox" id="tree-nut-free" name="health" value="tree-nut-free" class="health">
-            <label for="tree-nut-free">Tree-nut-free</label>
-
-            <input type="checkbox" id="alcohol-free" name="health" value="alcohol-free" class="health">
-            <label for="alcohol-free">Alcohol-free</label>
-        </fieldset> -->
 
         <label for="health-choices">Dietary Restrictions?</label>
 
@@ -77,21 +53,27 @@
         <input type="submit" value="Submit">
     </form>
 
-    <p id="js-error-message" class="error-message"></p>
+    <div class="results-container">
+        <div class="recipes">
+            <p id="recipe-error-message" class="error-message"></p>
+            <section id="recipe-results" class="hidden">
+                <h2>Recipes</h2>
+                <ol id="recipe-list">
+                </ol>
+            </section>
+        </div>
 
-    <section id="recipe-results" class="hidden">
-        <h2>Recipes</h2>
-        <ol id="recipe-list">
-        </ol>
-    </section>
-
-    <section id="meetups-results" class="hidden">
-        <h2>Local Meetups</h2>
-        <ol id="meetups-list">
-        </ol>
-    </section>
-
+        <div class="events">
+            <p id="events-error-message" class="error-message"></p>
+            <section id="events-results" class="hidden">
+                <h2>Local Meetups</h2>
+                <ol id="events-list">
+                </ol>
+            </section>
+        </div>
+    </div>
 
     <script src="main.js"></script>
 </body>
+
 </html>

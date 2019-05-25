@@ -1,3 +1,49 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* body {
+    background: url(background_1.jpg) no-repeat center;
+    background-size: cover;
+} */
+
+header {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat Alternates', sans-serif;
+    background-color: azure;
+    opacity: 0.9;
+    text-align: left;
+}
+
+h1 {
+    font-size: 50px;
+    text-decoration-line: underline;
+    /* border-bottom: 2px solid black; */
+}
+
+.tag-line {
+    font-size: 20px;
+}
+
+.results-container {
+    display: flex;
+    flex-direction: row;
+}
+
 .hidden {
     display: none;
+}
+
+form {
+    background-color: azure;
+    opacity: 0.9;
+   
+}
+
+@media all and (max-width: 450px) {
+    header {
+        text-align: center;
+    }
 }
