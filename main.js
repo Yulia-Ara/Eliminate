@@ -55,12 +55,23 @@ function getRecipes(recipe, health, diet, exclude) {
         });
 };
 
+function displayRecipesTab() {
+
+};
+
+function displayEventsTab() {
+
+};
+
 function displayRecipes(responseJson) {
     $('#recipe-list').empty();
+    if(responseJson.hits.length === 0) {
+        $('#h2-tag').text('No recipes found');
+    };
     for(let i = 0; i < responseJson.hits.length; i++) {
         $('#recipe-list').append(
-        `<li><h3><a href="${responseJson.hits[i].recipe.url}" target="_blank">${responseJson.hits[i].recipe.label}</a></h3>
-        <img class="recipe-photo" src="${responseJson.hits[i].recipe.image}"
+        `<li>
+        <img class="recipe-photo" src="${responseJson.hits[i].recipe.image}"><h3 class="recipe-name"><a href="${responseJson.hits[i].recipe.url}" target="_blank">${responseJson.hits[i].recipe.label}</a></h3>
       </li>`
     )};
     $('#recipe-results').removeClass('hidden');
@@ -68,10 +79,13 @@ function displayRecipes(responseJson) {
 
 function displayEvents(oData) {
     $('#events-list').empty();
+    if(oData.events.event.length === 0) {
+        $('#h2-tag-events').text('No events found');
+    };
     for(let i = 0; i < oData.events.event.length; i++) {
         $('#events-list').append(
-            `<li><h3><a href="${oData.events.event[i].url}" target="_blank">${oData.events.event[i].title}</a></h3>
-            <ul><li>Date: ${oData.events.event[i].start_time}</li><li>Description: ${oData.events.event[i].description}</li><li>Location: ${oData.events.event[i].venue_name} ${oData.events.event[i].venue_address}</li></ul></li>`
+            `<li class="order-list"><h3 class="event-name"><a href="${oData.events.event[i].url}" target="_blank">${oData.events.event[i].title}</a></h3>
+            <ul><li><strong>Date: </strong>${oData.events.event[i].start_time}</li><li><strong>Description: </strong>${oData.events.event[i].description}</li><li><strong>Location: </strong>${oData.events.event[i].venue_name} ${oData.events.event[i].venue_address}</li></ul></li>`
         )};
         $('#events-results').removeClass('hidden');
 };
@@ -88,27 +102,10 @@ function getEvents(zipCode) {
         page_size: '20'
     };
     EVDB.API.call("/events/search", parameters, function(oData) {
+        console.log(oData);
         displayEvents(oData);
       });
 }
-
-// function getEvents(zipCode) {
-//     let url = `http://api.eventful.com/json/events/search?app_key=gxDTZZMW4Jb5NqB6&keywords=nutrition&keywords=diet&keywords=food&l=${zipCode}&within=50&units=mi&scheme=https`
-
-//     fetch(url)
-//         .then(response => {
-//             if (response.ok) {
-//                 $('#events-error-message').text('');
-//                 return response.json();
-//             }
-//             throw new Error(response.statusText);
-//         })
-//         .then(responseJson => displayEvents(responseJson))
-//         .catch(err => {
-//             $('#events-results').addClass('hidden');
-//             $('#events-error-message').text(`Something went wrong: ${err.message}`);
-//         });
-// };
 
 function watchForm() {
     $('form').submit(event => {
@@ -128,5 +125,4 @@ function watchForm() {
     });
 };
 
-// $(".selectElement option:selected").prop('selected' , false)
 watchForm();
