@@ -63,8 +63,13 @@ a {
     color: black;
 }
 
+a:visited {
+    color: darkolivegreen;
+}
+
 .recipe-name {
     font-size: 20px;
+    padding: 10px;
     color: black;
     text-align: center;
 }
@@ -77,10 +82,10 @@ a {
 
 #recipe-list li {
     width: 221.333px;
-    height: 288px;
     margin: 8px 8px 32px;
     margin-left: auto;
     margin-right: auto;
+    /* padding-bottom: 5px; */
     border: 1px solid black;
     background-color: #ffe259
 }
@@ -186,7 +191,46 @@ input {
     display: none;
 }
 
-/* .hide {
+div .resultsTabs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.hideTabs {
     display: none;
-} */
-    
+}
+
+#viewTabs {  
+    font-family: 'Fira Sans', sans-serif;
+    text-align: center;
+    padding: 0;
+    margin-top: 10px;
+    font-size: 25px;
+    list-style: none;
+    cursor: pointer;
+}
+
+#viewTabs li {
+    display: inline-block;
+}
+
+.active {
+    text-decoration-line: underline;
+}
+
+@media screen and (min-width: 300px) {
+    div .resultsTabs {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    #viewTabs {
+        font-size: 15px;
+    }
+}

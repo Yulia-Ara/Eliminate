@@ -55,12 +55,12 @@ function getRecipes(recipe, health, diet, exclude) {
         });
 };
 
-function displayRecipesTab() {
+function toggleResultsTab () {
+    $('#viewTabs').click(function(event) {
+        event.preventDefault();
+        alert('working');
 
-};
-
-function displayEventsTab() {
-
+    })
 };
 
 function displayRecipes(responseJson) {
@@ -87,7 +87,7 @@ function displayEvents(oData) {
             `<li class="order-list"><h3 class="event-name"><a href="${oData.events.event[i].url}" target="_blank">${oData.events.event[i].title}</a></h3>
             <ul><li><strong>Date: </strong>${oData.events.event[i].start_time}</li><li><strong>Description: </strong>${oData.events.event[i].description}</li><li><strong>Location: </strong>${oData.events.event[i].venue_name} ${oData.events.event[i].venue_address}</li></ul></li>`
         )};
-        $('#events-results').removeClass('hidden');
+        // $('#events-results').removeClass('hidden');
 };
 
 function getEvents(zipCode) {
@@ -122,6 +122,8 @@ function watchForm() {
         $('#diet-choices').val('');
         $('#exclude').val('');
         $('#zipcode').val('');
+        $('#hideTabs').removeClass('hideTabs');
+        toggleResultsTab();
     });
 };
 

@@ -50,28 +50,33 @@
         <input type="text" id="exclude" name="exclude" placeholder="e.g. eggs, chicken, gluten" aria-placeholder="e.g. eggs, chicken, gluten">
 
         <label for="zipcode">Zipcode:</label>
-        <input type="input" id="zipcode" name="zipcode" placeholder="e.g. 97203" aria-placeholder="e.g. 97203" required aria-required="true"><br>
+        <input type="input" id="zipcode" name="zipcode" placeholder="e.g. 97203" aria-placeholder="e.g. 97203"><br>
 
         <input type="submit" value="Submit" class="submitButton">
     </form>
 
     <div class="results-container">
-        <!-- <div id="recipe-tag" class="hide">
-            <input type="submit" value="View Recipes" id="view-recipes">
-        </div> -->
-        <div class="recipes">
-            <p id="recipe-error-message" class="error-message"></p>
-            <section id="recipe-results" class="hidden">
-                <h2 id="h2-tag">Recipes</h2>
-                <ol id="recipe-list">
-                </ol>
-            </section>
-        </div>
+            <div class="recipes">
+                <p id="recipe-error-message" class="error-message"></p>
+                <section>
+                    <div id="hideTabs" class="hideTabs">
+                        <div class="resultsTabs">
+                            <ul id="viewTabs">
+                                <li id="recipeTab" class="active">View Recipes</li>
+                                <li> | </li>
+                                <li id="eventTab">View Events</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="recipe-results" class="hidden">
+                        <h2 id="h2-tag"></h2>
+                        <ol id="recipe-list">
+                        </ol>
+                    </div>
+                </section>
+            </div>
 
         <div class="events">
-            <!-- <div class="hide">
-                <input type="submit" value="View Events">
-            </div> -->
             <section id="events-results" class="hidden">
                 <h2 id="h2-tag-events">Local Events</h2>
                 <ol id="events-list">
