@@ -58,9 +58,28 @@ function getRecipes(recipe, health, diet, exclude) {
 function toggleResultsTab () {
     $('#viewTabs').click(function(event) {
         event.preventDefault();
-        alert('working');
-
-    })
+        const selected = $(event.target).attr('id') === 'recipeTab' ? 'recipes' : 'events'
+        if (selected === 'recipes') {
+            if (!$('#recipeTab').hasClass('active')) {
+                $('#recipeTab').addClass('active');
+            }
+            $('#recipeTab').siblings('li').removeClass('active');
+            $('#recipe-results').removeClass('hidden'); 
+          if(!$('#recipe-results').hasClass('hidden')) {
+            $('#events-results').addClass('hidden');
+          }
+        }
+        else {
+            if (!$('#eventTab').hasClass('active')) {
+                $('#eventTab').addClass('active');
+            }
+            $('#eventTab').siblings('li').removeClass('active');
+            $('#events-results').removeClass('hidden');
+            if(!$('#events-results').hasClass('hidden')) {
+                $('#recipe-results').addClass('hidden');
+            }
+        }
+    });
 };
 
 function displayRecipes(responseJson) {
@@ -74,7 +93,7 @@ function displayRecipes(responseJson) {
         <img class="recipe-photo" src="${responseJson.hits[i].recipe.image}"><h3 class="recipe-name"><a href="${responseJson.hits[i].recipe.url}" target="_blank">${responseJson.hits[i].recipe.label}</a></h3>
       </li>`
     )};
-    $('#recipe-results').removeClass('hidden');
+    $('#recipeTab').click();
 };
 
 function displayEvents(oData) {
@@ -87,7 +106,6 @@ function displayEvents(oData) {
             `<li class="order-list"><h3 class="event-name"><a href="${oData.events.event[i].url}" target="_blank">${oData.events.event[i].title}</a></h3>
             <ul><li><strong>Date: </strong>${oData.events.event[i].start_time}</li><li><strong>Description: </strong>${oData.events.event[i].description}</li><li><strong>Location: </strong>${oData.events.event[i].venue_name} ${oData.events.event[i].venue_address}</li></ul></li>`
         )};
-        // $('#events-results').removeClass('hidden');
 };
 
 function getEvents(zipCode) {
