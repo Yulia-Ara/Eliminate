@@ -38,6 +38,7 @@ h1 {
     font-family: 'Fira Sans', sans-serif;
     background: #ffe259;
     background: linear-gradient(to bottom, #ffa751, #ffe259);
+    overflow-x: hidden;
 }
 
 #h2-tag {
@@ -110,6 +111,7 @@ ul {
 
 ul li {
     padding-bottom: 10px;
+    padding-right: 10px;
 }
 
 .event-name {
@@ -150,6 +152,7 @@ input {
     border-radius: 6px;
     border: 1px solid #ffaa22;
     cursor: text;
+    width: 200px;
 }
 
 #health-choices, #diet-choices {
