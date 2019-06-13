@@ -5,7 +5,7 @@
  const app_key = 'a4dec545d5546bb4e6f95812a8af50a4';
  const searchUrl = 'https://api.edamam.com/search';
 
-//This function formats the parameters for the Edamam API
+//This function formats the parameters for the Edamam recipe API
 function formatQueryParams(params) {
     const queryItems = Object.keys(params)
       .map(key => {

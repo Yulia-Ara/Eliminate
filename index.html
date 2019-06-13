@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://api.eventful.com/js/api">
     </script>
+    <script src="https://developer.edamam.com/attribution/badge.js"></script>
 </head>
 
 <body>
@@ -18,7 +19,6 @@
     <header>
         <h1>Eliminate!</h1>
         <div class="title-bar">
-            <!-- <h2>Changing the way you eat is hard.</h2> -->
             <h2 class="tag-line">Find recipes and support!</h2>
         </div>
     </header>
@@ -53,8 +53,17 @@
         <input type="input" id="zipcode" name="zipcode" placeholder="e.g. 97203" aria-placeholder="e.g. 97203"><br>
 
         <input type="submit" value="Submit" class="submitButton">
+        
+        <div class="attribution">
+            <div id="edamam-badge" data-color="transparent"></div>
+            <div class="eventful-badge eventful-small">
+                <img src="http://api.eventful.com/images/powered/eventful_58x20.gif"
+              alt="Local Events, Concerts, Tickets">
+                <p><a href="http://eventful.com/">Events</a> by Eventful</p>
+            </div>
+        </div>
     </form>
-
+    
     <div class="results-container">
             <div class="recipes">
                 <p id="recipe-error-message" class="error-message"></p>

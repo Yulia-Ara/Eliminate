@@ -220,6 +220,29 @@ div .resultsTabs {
     text-decoration-line: underline;
 }
 
+.attribution {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#edamam-badge {
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.eventful-badge,
+.eventful-badge * {
+  text-align: center    !important;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.eventful-small {     
+    font-size: 11px       !important;
+    line-height: 11px     !important;
+    margin-top: 20px;
+}
+
 @media screen and (min-width: 300px) {
     div .resultsTabs {
         display: flex;
