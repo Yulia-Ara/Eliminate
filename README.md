@@ -10,4 +10,15 @@ jQuery
 # Demo
 [Live Demo](https://yulia-ara.github.io/Eliminate/)
 # Screenshots
-Search Page:
+
+Homepage/Search Form:
+
+![homepage showing search for](https://github.com/Yulia-Ara/Eliminate/blob/master/Screenshots/search_page.PNG "Search Page")
+
+Recipe Results Page:
+
+![recipes results](https://github.com/Yulia-Ara/Eliminate/blob/master/Screenshots/recipe_results.PNG "Recipe Results")
+
+Events Results Page:
+
+![events results](https://github.com/Yulia-Ara/Eliminate/blob/master/Screenshots/events-results.PNG "Events Results")
