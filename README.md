@@ -9,6 +9,8 @@ JavaScript
 jQuery  
 # Demo
 [Live Demo](https://yulia-ara.github.io/Eliminate/)
+# Accessibility
+The Edamam API unfortunately does not provide alt text for their recipe photos. I apologise. I wish I could change that. If there are any other accessibility issues that you find, please email me at yuliaarakelyan@gmail.com to let me know. 
 # Screenshots
 
 Homepage/Search Form:
